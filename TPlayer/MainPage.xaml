@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="TPlayer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TPlayer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent"
+    >
+    <Page.Resources>
+        <AcrylicBrush x:Key="AcrylicBackgroundBrush"
+                  BackgroundSource="HostBackdrop"
+                  TintColor="#FF000000"
+                  TintOpacity="0.4"
+                  FallbackColor="#FFDDDDDD"/>
+    </Page.Resources>
+    <Grid Background="{StaticResource AcrylicBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+    </Grid>
+</Page>
