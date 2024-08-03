@@ -1,0 +1,22 @@
+﻿<UserControl
+    x:Class="TPlayer.Views.VideoPlayer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TPlayer.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    >
+
+    <Grid>
+        <MediaPlayerElement x:Name="mediaPlayerElement" AreTransportControlsEnabled="False" />
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Black" Opacity="0.7">
+            <Button Content="Play" Command="{Binding PlayCommand}" />
+            <Button Content="Pause" Command="{Binding PauseCommand}" />
+            <Button Content="Mute" Command="{Binding MuteCommand}" />
+            <Slider x:Name="volumeSlider" Width="100" ValueChanged="VolumeSlider_ValueChanged" Minimum="0" Maximum="1" Value="{Binding Volume, Mode=TwoWay}" />
+            <Slider x:Name="seekSlider" Width="200" ValueChanged="SeekSlider_ValueChanged" Minimum="0" Maximum="1" Value="{Binding Position, Mode=TwoWay}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

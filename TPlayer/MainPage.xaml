@@ -5,10 +5,17 @@
     xmlns:local="using:TPlayer"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="using:TPlayer.Views"
+    xmlns:vm="using:TPlayer.ViewModels"
     mc:Ignorable="d"
     Background="Transparent"
     >
+   
     <Page.Resources>
+        <DataTemplate x:Key="VideoPlayerTemplate" x:DataType="vm:VideoPlayerViewModel">
+        <views:VideoPlayer/>
+        </DataTemplate>
+
         <AcrylicBrush x:Key="AcrylicBackgroundBrush"
                   BackgroundSource="HostBackdrop"
                   TintColor="#FF000000"

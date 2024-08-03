@@ -9,5 +9,7 @@ namespace TPlayer.ViewModels
 {
     public class MainViewModel:ObservableObject
     {
+        public BaseViewModel RightPanel { get; set; }
+        public BaseViewModel LeftPanel { get; set; }
     }
 }
