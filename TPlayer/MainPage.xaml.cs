@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using TPlayer.ViewModels;
+using TPlayer.Views;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -23,12 +24,30 @@ namespace TPlayer
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        readonly Dictionary<Type, Type> ViewModelToViewMap = new Dictionary<Type, Type>
+                {
+                    { typeof(VideoPlayerViewModel), typeof(VideoPlayer) },
+                };
         public MainViewModel VM { get; set; }
         public MainPage(MainViewModel vm)
         {
             VM=vm;
             DataContext=vm;
             this.InitializeComponent();
+            UpdateLeftPanel();
+            //UpdateRightPanel();//Currently Null
+        }
+        public void UpdateLeftPanel()
+        {
+            var leftPanelViewModel = VM.LeftPanel;
+            Type viewType = ViewModelToViewMap[leftPanelViewModel.GetType()];
+            LeftPanelContentControl.Content = Activator.CreateInstance(viewType);
+        }
+        public void UpdateRightPanel()
+        {
+            var rightPanelViewModel = VM.RightPanel;
+            Type viewType = ViewModelToViewMap[rightPanelViewModel.GetType()];
+            RightPanelContentControl.Content = Activator.CreateInstance(viewType);
         }
     }
 }

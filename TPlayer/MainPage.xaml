@@ -12,10 +12,6 @@
     >
    
     <Page.Resources>
-        <DataTemplate x:Key="VideoPlayerTemplate" x:DataType="vm:VideoPlayerViewModel">
-        <views:VideoPlayer/>
-        </DataTemplate>
-
         <AcrylicBrush x:Key="AcrylicBackgroundBrush"
                   BackgroundSource="HostBackdrop"
                   TintColor="#FF000000"
@@ -24,12 +20,22 @@
     </Page.Resources>
     <Grid Background="{StaticResource AcrylicBackgroundBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50px"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <StackPanel>
+            
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            
+        </StackPanel>
+        <ContentControl x:Name="LeftPanelContentControl" Grid.Row="1" Content="{Binding LeftPanel}" />
+        <ContentControl x:Name="RightPanelContentControl" Grid.Row="1" Grid.Column="1" Content="{Binding LeftPanel}" />
+
+        
     </Grid>
 </Page>

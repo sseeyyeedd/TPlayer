@@ -15,8 +15,8 @@
             <Button Content="Play" Command="{Binding PlayCommand}" />
             <Button Content="Pause" Command="{Binding PauseCommand}" />
             <Button Content="Mute" Command="{Binding MuteCommand}" />
-            <Slider x:Name="volumeSlider" Width="100" ValueChanged="VolumeSlider_ValueChanged" Minimum="0" Maximum="1" Value="{Binding Volume, Mode=TwoWay}" />
-            <Slider x:Name="seekSlider" Width="200" ValueChanged="SeekSlider_ValueChanged" Minimum="0" Maximum="1" Value="{Binding Position, Mode=TwoWay}" />
+            <Slider x:Name="volumeSlider" Width="100" Minimum="0" Maximum="1" Value="{Binding Volume, Mode=TwoWay}" />
+            <Slider x:Name="seekSlider" Width="200" Minimum="0" Maximum="1" Value="{Binding Position, Mode=TwoWay}" />
         </StackPanel>
     </Grid>
 </UserControl>
